@@ -32,4 +32,8 @@ class PaperTrailHashDiff
     end
     scope
   end
+  
+  def load_changeset(version)
+    HashWithIndifferentAccess.new(version.send(:object_changes_deserialized))
+  end
 end
